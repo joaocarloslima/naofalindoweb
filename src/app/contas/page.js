@@ -2,12 +2,7 @@ import NavBar from "@/components/NavBar";
 import DataRow from "./DataRow";
 import Button from "@/components/Button";
 import { PlusIcon } from "@heroicons/react/24/outline";
-
-async function getContas() {
-  const url = "http://localhost:8080/api/contas"
-  const resp = await fetch(url)
-  return resp.json()
-}
+import { getContas } from "@/actions/contas";
 
 export default async function Contas() {
   const data = await getContas()
