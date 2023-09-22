@@ -10,7 +10,7 @@ export default function DataRow({conta}){
             </div>
             <div className="flex gap-2 items-center">
               <span>R$100.00</span>
-              <DropMenu />
+              <DropMenu idConta={conta.id} />
             </div>
         </div>
     )
