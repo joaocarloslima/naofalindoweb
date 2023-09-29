@@ -16,7 +16,7 @@ export default function Button({children, icon, variant="primary", type="link", 
                 {children}
             </Link>
             :
-            <button className={variantClass}>
+            <button className={variantClass} {...props}>
                 {icon}
                 {children}
             </button>

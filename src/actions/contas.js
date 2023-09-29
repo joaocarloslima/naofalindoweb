@@ -1,15 +1,18 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
+import { cookies } from 'next/headers'
 
 const url = process.env.NEXT_PUBLIC_BASE_URL +  "/contas"
 
 export async function create(formData){
+    const token = cookies().get("naofalindo_token")
     const options = {
         method: "POST",
         body: JSON.stringify(Object.fromEntries(formData)),
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token.value}`
         }
     }
     const resp = await fetch(url, options)
